@@ -18,8 +18,11 @@ main.py         точка входа
 
 ## Запуск
 
+Из корня репозитория:
+
 ```bash
-cd lr2 && python main.py
-pip install -r requirements-dev.txt && pytest lr2 && ruff check .   # из корня репозитория
-docker build -t jm . && docker run -it jm   # Dockerfile общий, в корне
+python3 main.py 2                        # через общую точку входа
+pip install -r requirements-dev.txt
+pytest lr2 && ruff check .               # тесты и линтер
+docker build -t scrum-labs . && docker run --rm -it scrum-labs 2
 ```

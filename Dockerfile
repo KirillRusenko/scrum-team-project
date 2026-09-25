@@ -6,5 +6,5 @@ COPY . .
 # Зависимости ставятся, только если в репозитории есть requirements.txt
 RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
 
-# Укажите точку входа вашей программы
-CMD ["python", "main.py"]
+# Общая точка входа; номер ЛР передаётся аргументом: docker run -it <образ> 2
+ENTRYPOINT ["python", "main.py"]
