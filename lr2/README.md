@@ -8,7 +8,7 @@
 
 ```
 jelinski_moranda/
-  data.py       входные данные (вариант 1, таблица 1)
+  data.py       чтение входных данных из общего .env
   solver.py     численное решение уравнения для B
   model.py      расчёт K, X(n+1), t_k
   cli.py        ввод данных и вывод результатов
@@ -25,4 +25,13 @@ python3 main.py 2                        # через общую точку вх
 pip install -r requirements-dev.txt
 pytest lr2 && ruff check .               # тесты и линтер
 docker build -t scrum-labs . && docker run --rm -it scrum-labs 2
+```
+
+## Конфигурация
+
+Исходные данные (интервалы Xi варианта 1) лежат в общем `.env` в корне репозитория
+Переменная окружения процесса имеет приоритет над файлом:
+
+```bash
+LR2_INTERVALS="5,7,9,12,20" python3 main.py 2
 ```
