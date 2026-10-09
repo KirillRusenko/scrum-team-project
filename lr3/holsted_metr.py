@@ -1,7 +1,6 @@
 import math
 
 
-
 def log2(x: float) -> float:
     return math.log(x) / math.log(2)
 
@@ -235,3 +234,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
